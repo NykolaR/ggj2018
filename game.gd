@@ -10,6 +10,8 @@ func _ready():
 	else:
 		# else, give control to self (recursive)
 		$player2.set_network_master(get_tree().get_network_unique_id())
+	
+	add_child(preload("res://level.tscn").instance())
 
 func _input(event):
 	if event.is_action_pressed("exit_game"):
