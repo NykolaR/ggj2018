@@ -49,9 +49,9 @@ func _server_disconnected():
 ### GAME MANAGEMENT FUNCTIONS ###
 
 func _end_game(with_error=""):
-	if (has_node("/root/pong")):
+	if (has_node("game")):
 		#erase pong scene
-		get_node("/root/pong").free() # erase immediately, otherwise network might show errors (this is why we connected deferred above)
+		get_node("game").free() # erase immediately, otherwise network might show errors (this is why we connected deferred above)
 		show()
 	
 	get_tree().set_network_peer(null) #remove peer
