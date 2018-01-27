@@ -6,16 +6,134 @@
 
 [node name="level" type="Spatial"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.5012 )
+
 [node name="platform_global" parent="." index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 10.9446, 0, 0, 0, 0.501719, 0, 0, 0, 11.3193, 0, 0, 0 )
+transform = Transform( 10.9446, 0, 0, 0, 0.501719, 0, 0, 0, 11.3193, 0, 0, 36.4753 )
 
-[node name="platform_player_1" parent="." index="1" instance=ExtResource( 2 )]
+[node name="platform_global2" parent="." index="1" instance=ExtResource( 1 )]
 
-transform = Transform( 1.78706, 0, 1.14696, 0, 1, 0, -2.10874, 0, 0.971991, -6.17567, 2.1918, -6.52027 )
+transform = Transform( 10.9446, 0, 0, 0, 0.501719, 0, 0, 0, 11.3193, 0, 0, -37.4176 )
 
-[node name="platform_player_2" parent="." index="2" instance=ExtResource( 3 )]
+[node name="platform_player_1" parent="." index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.71542, -7.84324, 2.19581, 5.19583 )
+transform = Transform( 1.78706, 0, 1.14696, 0, 1, 0, -2.10874, 0, 0.971991, -0.98519, -0.83068, 20.6819 )
+
+[node name="platform_player_10" parent="." index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 0.936923, 0, 1.41442, 0, 1, 0, -2.60049, 0, 0.509595, 3.24791, -0.83068, 15.1174 )
+
+[node name="platform_player_11" parent="." index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.936923, 0, 1.41442, 0, 1, 0, -2.60049, 0, 0.509595, 5.87667, -0.83068, 8.72248 )
+
+[node name="platform_player_12" parent="." index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 0.936923, 0, 1.41442, 0, 1, 0, -2.60049, 0, 0.509595, 6.40183, -0.83068, 1.40823 )
+
+[node name="platform_player_13" parent="." index="6" instance=ExtResource( 2 )]
+
+transform = Transform( -0.0684066, 0, 1.50296, 0, 1, 0, -2.76328, 0, -0.0372105, 8.7063, -0.83068, -5.55766 )
+
+[node name="platform_player_14" parent="." index="7" instance=ExtResource( 2 )]
+
+transform = Transform( -1.17659, 0, 1.36042, 0, 1, 0, -2.5012, 0, -0.639957, 7.6505, -0.83068, -12.7022 )
+
+[node name="platform_player_15" parent="." index="8" instance=ExtResource( 2 )]
+
+transform = Transform( -1.17659, 0, 1.36042, 0, 1, 0, -2.5012, 0, -0.639957, 3.83945, -0.83068, -19.4814 )
+
+[node name="platform_player_16" parent="." index="9" instance=ExtResource( 2 )]
+
+transform = Transform( -1.17659, 0, 1.36042, 0, 1, 0, -2.5012, 0, -0.639957, -0.677889, -0.83068, -26.9888 )
+
+[node name="platform_player_2" parent="." index="10" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.71542, -7.84324, -0.23022, 21.5504 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_3" parent="." index="11" instance=ExtResource( 3 )]
+
+transform = Transform( 0.925913, 0, -1.02571, 0, 1, 0, 0.377737, 0, 2.51424, -7.84324, -0.23022, 14.702 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_4" parent="." index="12" instance=ExtResource( 3 )]
+
+transform = Transform( 0.99877, 0, 0.13462, 0, 1, 0, -0.049576, 0, 2.71208, -3.15364, -0.23022, 9.52113 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_5" parent="." index="13" instance=ExtResource( 3 )]
+
+transform = Transform( 0.99877, 0, 0.13462, 0, 1, 0, -0.049576, 0, 2.71208, -3.15364, -0.23022, 1.9072 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_6" parent="." index="14" instance=ExtResource( 3 )]
+
+transform = Transform( 0.814645, 0, -1.57484, 0, 1, 0, 0.57996, 0, 2.2121, -0.169965, -0.23022, -4.88525 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_7" parent="." index="15" instance=ExtResource( 3 )]
+
+transform = Transform( 0.811629, 0.0859621, -1.56901, -0.0700286, 0.996298, 0.135376, 0.57996, 0, 2.2121, -0.488946, -0.23022, -10.5759 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_8" parent="." index="16" instance=ExtResource( 3 )]
+
+transform = Transform( 0.811629, 0.0859621, -1.56901, -0.0700286, 0.996298, 0.135376, 0.57996, 0, 2.2121, 2.65284, -0.171685, -17.3585 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="platform_player_9" parent="." index="17" instance=ExtResource( 3 )]
+
+transform = Transform( 0.811629, 0.0859621, -1.56901, -0.0700286, 0.996298, 0.135376, 0.57996, 0, 2.2121, 6.49876, -0.171685, -23.2735 )
+input_ray_pickable = true
+input_capture_on_drag = false
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Collision" ]
 
 
