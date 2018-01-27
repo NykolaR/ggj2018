@@ -46,10 +46,13 @@ func _physics_process(delta):
 	    	    airJumpsRemaining -= 1
 	
 	if orb.state == orb.ATTACHED:
-		orb.translation = translation
+		orb.translation = translation + Vector3(0, 0.2, -0.2).rotated(Vector3(0, 1, 0), $cam_y.rotation.y)
 	
 	if Input.is_action_just_pressed("throw"):
-		orb._set_direction(Vector3(0, $cam_y.rotation.y, $cam_y/cam_x.rotation.x))
+		#var d = Vector3(-$cam_y.rotation.y, $cam_y/cam_x.rotation.x, 0)
+		#var d = Vector3(0, $cam_y/cam_x.rotation.x, 0)
+		#print(d)
+		orb._set_direction(Vector3(-sin($cam_y.rotation.y), $cam_y/cam_x.rotation.x, -cos($cam_y.rotation.y)))
 
 func _input(event):
 	if event is InputEventMouseMotion:
