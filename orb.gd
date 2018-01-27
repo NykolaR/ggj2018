@@ -1,9 +1,10 @@
 extends RigidBody
 
-var vspeed = 0
-var gravity = 0.1
+#var vspeed = 0
+#var gravity = 0.1
 var dir = Vector3()
 var state = ATTACHED
+var throwing = false
 
 const THROW_STRENGTH = 10
 
@@ -21,12 +22,17 @@ func _physics_process(delta):
 		mode = RigidBody.MODE_KINEMATIC
 		return
 	
-	mode = RigidBody.MODE_RIGID
+	if throwing:
+		print("throw")
+		apply_impulse(Vector3(), dir.normalized() * THROW_STRENGTH)
+		throwing = false
 	#vspeed -= gravity
 	#dir.y = vspeed
 	
 	#move(movement, Vector3(0, 1, 0))
 
-func _set_direction(dir, strength=THROW_STRENGTH):
-	apply_impulse(Vector3(), dir.normalized() * THROW_STRENGTH)
+func _set_direction(direction, strength=THROW_STRENGTH):
+	dir = direction
+	throwing = true
 	state = PHYSICS
+	mode = RigidBody.MODE_RIGID
