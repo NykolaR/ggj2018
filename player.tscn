@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape" id=1]
 
-radius = 0.5
+radius = 1.0
 height = 1.0
 
 [node name="player" type="KinematicBody"]
