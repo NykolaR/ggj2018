@@ -7,7 +7,7 @@ length = 5.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("../Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ Vector2( -54.2203, 466.506 ), Vector2( 538.903, 387.604 ), Vector2( 1093.94, 485.551 ), Vector2( 1648.64, 527.723 ), Vector2( 521.218, 383.523 ), Vector2( -59.6617, 478.749 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/path = NodePath("../Sprite:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
