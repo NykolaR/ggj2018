@@ -73,7 +73,6 @@ func _on_host_pressed():
 		return
 		
 	get_tree().set_network_peer(peer)
-	get_node("panel/join").set_disabled(true)
 	get_node("panel/host").set_disabled(true)
 	_set_status("Waiting for player...",true)
 

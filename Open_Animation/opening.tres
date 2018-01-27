@@ -1,0 +1,33 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+
+resource_name = "Orbtoss1"
+length = 8.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -64.6785, 457.538 ), Vector2( 529.906, 248.765 ), Vector2( 1072.72, 422.464 ), Vector2( 1072.72, 422.464 ), Vector2( 539.928, 227.053 ), Vector2( -86.3909, 340.625 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/Sprite1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -160.101, -160.101, -160.101, -160.101, -160.101, -160.101 ]
+}
+
