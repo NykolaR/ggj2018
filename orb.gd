@@ -32,7 +32,11 @@ func _physics_process(delta):
 	#move(movement, Vector3(0, 1, 0))
 
 func _set_direction(direction, strength=THROW_STRENGTH):
-	dir = direction
-	throwing = true
-	state = PHYSICS
-	mode = RigidBody.MODE_RIGID
+	if state == PHYSICS:
+		state = ATTACHED
+		return
+	else:
+		dir = direction
+		throwing = true
+		state = PHYSICS
+		mode = RigidBody.MODE_RIGID
