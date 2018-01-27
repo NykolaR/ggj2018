@@ -14,10 +14,9 @@ var controllerExists = false
 onready var orb = get_parent().get_node("orb")
 
 func _ready():
-	var controllerExists = false
 	var controllers = Input.get_connected_joypads()
 	if controllers.size() > 0:
-		controllerExists = true;
+		controllerExists = true
 
 func _physics_process(delta):
 	if is_network_master():
