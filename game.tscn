@@ -31,8 +31,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="player2" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="player" parent="player2" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 3 )
@@ -43,7 +41,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="camera" parent="player2/player/cam_y/cam_x" index="0"]
 
 cull_mask = 1048559
-current = true
 
 [node name="orb" parent="player2" index="1" instance=ExtResource( 3 )]
 
