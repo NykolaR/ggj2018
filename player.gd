@@ -2,7 +2,7 @@ extends KinematicBody
 
 var sensitivity = Vector2(-0.01, -0.003)
 var vspeed = 0
-var gravity = 0.01
+var gravity = 0.1
 const jump = 5
 var movement_speed = 5
 
@@ -26,11 +26,10 @@ func _physics_process(delta):
 	vspeed -= gravity
 	movement.y = vspeed
 	
-	move_and_slide(movement)
+	move_and_slide(movement, Vector3(0, 1, 0))
 	
 	if is_on_floor():
 		vspeed = 0
-		print("floor")
 		
 		if Input.is_action_just_pressed("jump"):
 			vspeed = jump
