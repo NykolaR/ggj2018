@@ -10,7 +10,7 @@ func _ready():
 	get_tree().connect("connection_failed",self,"_connected_fail")
 	get_tree().connect("server_disconnected",self,"_server_disconnected")
 
-func set_status(text, is_ok): # set status labels
+func _set_status(text, is_ok): # set status labels
 	if (is_ok):
 		$panel/status_ok.set_text(text)
 		$panel/status_fail.set_text("")
