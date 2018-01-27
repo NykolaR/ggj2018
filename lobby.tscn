@@ -1,22 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://lobby.gd" type="Script" id=1]
-[ext_resource path="res://Open_Animation/cliff.png" type="Texture" id=2]
-[ext_resource path="res://Open_Animation/AnimationPlayer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Open_Animation/Title2.png" type="Texture" id=4]
-[ext_resource path="res://Open_Animation/Title.png" type="Texture" id=5]
-[ext_resource path="res://GGJ18.jpg" type="Texture" id=6]
-
-[sub_resource type="Theme" id=1]
-
-
-[sub_resource type="ImageTexture" id=2]
-
-flags = 7
-storage = 0
-lossy_quality = 0.7
-flags = 7
-size = Vector2( 0, 0 )
 
 [node name="lobby" type="Control" index="0"]
 
@@ -24,10 +8,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 3.0
-margin_top = -4.0
-margin_right = 43.0
-margin_bottom = 36.0
+margin_right = 40.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -35,112 +17,80 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="panel" type="ColorRect" parent="." index="0"]
+[node name="title" type="Label" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -400.0
-margin_top = -23.0
-margin_right = 1025.0
-margin_bottom = 605.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = SubResource( 1 )
-color = Color( 0.0396576, 0.271919, 0.441406, 1 )
-_sections_unfolded = [ "Theme" ]
-
-[node name="TextureRect2" type="TextureRect" parent="panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 398.0
-margin_top = 28.0
-margin_right = 1427.0
-margin_bottom = 700.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 0
-
-[node name="title" type="Label" parent="panel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 400.0
-margin_top = 28.0
-margin_right = 1426.0
-margin_bottom = 191.0
+margin_top = 1.0
+margin_right = 1026.0
+margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "GGJ2018"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
+_sections_unfolded = [ "Rect" ]
 
-[node name="address_label" type="Label" parent="panel" index="2"]
+[node name="panel" type="Panel" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 716.0
-margin_top = 187.0
-margin_right = 772.0
-margin_bottom = 201.0
+margin_left = 323.0
+margin_top = 160.0
+margin_right = 714.0
+margin_bottom = 327.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="address_label" type="Label" parent="panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 13.0
+margin_right = 69.0
+margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_colors/font_color = Color( 0.628906, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.171875, 0.00335693, 0.00335693, 1 )
 text = "Address:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_colors" ]
 
-[node name="address" type="LineEdit" parent="panel" index="3"]
+[node name="address" type="LineEdit" parent="panel" index="1"]
 
-light_mask = 22543
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 811.0
-margin_top = 185.0
-margin_right = 1001.0
-margin_bottom = 209.0
+margin_left = 13.0
+margin_top = 38.0
+margin_right = 371.0
+margin_bottom = 62.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_colors/selection_color = Color( 0.46875, 0.0292969, 0.0292969, 1 )
-custom_colors/cursor_color = Color( 0.546875, 0.00213623, 0.00213623, 1 )
-custom_colors/font_color_selected = Color( 0.703125, 0.0164795, 0.0164795, 1 )
-custom_colors/font_color = Color( 0.867188, 0, 0, 1 )
 text = "192.168.43.4"
 focus_mode = 2
 context_menu_enabled = true
@@ -148,27 +98,23 @@ placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
 caret_position = 0
-_sections_unfolded = [ "Material", "Visibility", "custom_colors" ]
 
-[node name="host" type="Button" parent="panel" index="4"]
+[node name="host" type="Button" parent="panel" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 800.0
-margin_top = 233.0
-margin_right = 892.0
-margin_bottom = 261.0
+margin_left = 16.0
+margin_top = 91.0
+margin_right = 108.0
+margin_bottom = 119.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_colors/font_color = Color( 0.789063, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.5, 0.0175781, 0.0175781, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -176,25 +122,23 @@ group = null
 text = "Host"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="join" type="Button" parent="panel" index="5"]
+[node name="join" type="Button" parent="panel" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 942.0
-margin_top = 234.0
-margin_right = 1034.0
-margin_bottom = 262.0
+margin_left = 279.0
+margin_top = 92.0
+margin_right = 371.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_colors/font_color = Color( 0.726563, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -202,18 +146,17 @@ group = null
 text = "Join"
 flat = false
 align = 1
-_sections_unfolded = [ "custom_colors" ]
 
-[node name="status_ok" type="Label" parent="panel" index="6"]
+[node name="status_ok" type="Label" parent="panel" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 708.0
-margin_top = 292.0
-margin_right = 1061.0
-margin_bottom = 306.0
+margin_left = 15.0
+margin_top = 137.0
+margin_right = 368.0
+margin_bottom = 151.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -226,16 +169,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="status_fail" type="Label" parent="panel" index="7"]
+[node name="status_fail" type="Label" parent="panel" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 714.0
-margin_top = 308.0
-margin_right = 1067.0
-margin_bottom = 322.0
+margin_left = 15.0
+margin_top = 137.0
+margin_right = 368.0
+margin_bottom = 151.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
@@ -248,88 +191,28 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="AnimationPlayer" parent="panel" index="8" instance=ExtResource( 3 )]
-
-autoplay = "New Anim"
-autoplay = "New Anim"
-
-[node name="Title2" type="TextureRect" parent="panel" index="9"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 836.0
-margin_top = -224.0
-margin_right = 1546.0
-margin_bottom = 375.0
-rect_rotation = 18.779
+margin_right = 90.0
+margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
+focus_mode = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
-stretch_mode = 0
-
-[node name="Title" type="TextureRect" parent="panel" index="10"]
-
-modulate = Color( 1, 0.999695, 0.992188, 1 )
-light_mask = 191
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 510.0
-margin_top = -39.0
-margin_right = 1220.0
-margin_bottom = 560.0
-grow_horizontal = 0
-grow_vertical = 0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 5 )
-stretch_mode = 0
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 1.0
-margin_right = 40.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = SubResource( 2 )
-stretch_mode = 0
-
-[node name="GGJ18" type="TextureRect" parent="TextureRect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 545.0
-margin_top = 311.0
-margin_right = 818.0
-margin_bottom = 479.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 6 )
-expand = true
-stretch_mode = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
 
 [connection signal="pressed" from="panel/host" to="." method="_on_host_pressed"]
 

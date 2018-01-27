@@ -8,10 +8,13 @@ func _ready():
 		# if server, give control of player2 node to player 2 (recursive)
 		$player2.set_network_master(get_tree().get_network_connected_peers()[0])
 		$player1/player/cam_y/cam_x/camera.current = true
-	else:
+	elif not get_tree().network_peer == null:
 		# else, give control to self (recursive)
 		$player2.set_network_master(get_tree().get_network_unique_id())
 		$player2/player/cam_y/cam_x/camera.current = true
+	else:
+		$player1/player/cam_y/cam_x/camera.current = true
+		get_node("player2").queue_free()
 	
 	add_child(preload("res://level.tscn").instance())
 
