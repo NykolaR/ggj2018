@@ -73,7 +73,7 @@ sync func delete_level_change(amount):
 			rpc("delete_level")
 
 sync func delete_level():
-	emit_signal("spawn_next_level", next_level)
+	emit_signal("spawn_next_level", next_level, $next_spawn.to_global($next_spawn.translation))
 	get_parent().queue_free()
 
 func end_area_entered( body ):
@@ -85,7 +85,7 @@ func end_area_exited( body ):
 	rpc("set_light", body.is_in_group("p1"), body.is_in_group("p2"), DIM)
 
 func close_door_entered( body ):
-	pass # replace with function body
+	rpc("delete_level_change", 1)
 
 func close_door_exited( body ):
-	pass # replace with function body
+	rpc("delete_level_change", -1)
