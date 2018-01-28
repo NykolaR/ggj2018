@@ -16,7 +16,7 @@ func _ready():
 		$player1/player/cam_y/cam_x/camera.current = true
 		get_node("player2").queue_free()
 	
-	add_child(preload("res://scenes/level_scenes/intro_level.tscn").instance())
+	#add_child(preload("res://scenes/level_scenes/intro_level.tscn").instance())
 
 func _input(event):
 	if event.is_action_pressed("exit_game"):
