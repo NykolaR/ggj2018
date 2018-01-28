@@ -160,7 +160,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Glow" ]
 
-[node name="game" type="Spatial"]
+[node name="game" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -239,7 +239,6 @@ environment = SubResource( 3 )
 [node name="dir" type="DirectionalLight" parent="." index="3"]
 
 transform = Transform( -0.173145, -0.778852, -0.602835, 0.256388, -0.62662, 0.735943, -0.95094, -0.0271356, 0.308184, 0, 22.5217, 0 )
-visible = false
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 0.1
@@ -270,6 +269,8 @@ _sections_unfolded = [ "Light" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="level_holder" type="Spatial" parent="." index="5"]
 
 
 [editable path="player1/player"]
