@@ -4,20 +4,35 @@
 [ext_resource path="res://scenes/platforms/platform_player_1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/platforms/platform_player_2.tscn" type="PackedScene" id=3]
 
-[node name="intro_level" instance=ExtResource( 1 )]
+[node name="intro_level" index="0" instance=ExtResource( 1 )]
+
+[node name="walls" parent="level_start" index="0"]
+
+editor/display_folded = true
 
 [node name="back" parent="level_start/walls" index="2"]
 
-editor/display_folded = false
 visible = true
 
 [node name="collision" parent="level_start/walls/back" index="1"]
 
 disabled = false
 
+[node name="level_start_base" parent="level_start" index="1"]
+
+editor/display_folded = true
+
 [node name="level_middle" parent="." index="1"]
 
 transform = Transform( 2.51631, 0, 0, 0, 1, 0, 0, 0, 1, 19.7055, 0, 0 )
+
+[node name="close_door" parent="level_end" index="5"]
+
+editor/display_folded = false
+
+[node name="finish" parent="level_end/close_door" index="0"]
+
+disabled = true
 
 [node name="platform_player_1" parent="." index="3" instance=ExtResource( 2 )]
 
@@ -32,3 +47,4 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [editable path="level_start"]
 [editable path="level_start/walls/back"]
+[editable path="level_end"]
