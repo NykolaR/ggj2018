@@ -10,10 +10,6 @@
 
 transform = Transform( 2.51631, 0, 0, 0, 1, 0, 0, 0, 1, 19.7055, 0, 0 )
 
-[node name="level_end" parent="." index="2"]
-
-next_level = "res://scenes/level_scenes/levels_spawn/level1.tscn"
-
 [node name="platform_player_1" parent="." index="3" instance=ExtResource( 2 )]
 
 transform = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 2, 14, 4, 5 )

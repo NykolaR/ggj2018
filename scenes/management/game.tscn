@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/management/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player_scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player_scenes/orb.tscn" type="PackedScene" id=3]
-[ext_resource path="res://unused/DirectionalLight.gd" type="Script" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -67,7 +66,7 @@ sky_top_color = Color( 0.00866699, 0.0117203, 0.015625, 1 )
 sky_horizon_color = Color( 0.00938416, 0.0465647, 0.0585938, 1 )
 sky_curve = 0.25
 sky_energy = 1.0
-ground_bottom_color = Color( 0, 0, 0, 1 )
+ground_bottom_color = Color( 0.0585938, 0.046556, 0.0359344, 1 )
 ground_horizon_color = Color( 0.121623, 0.0925903, 0.160156, 1 )
 ground_curve = 0.01
 ground_energy = 1.0
@@ -79,6 +78,7 @@ sun_angle_max = 15.0
 sun_curve = 0.063728
 sun_energy = 16.0
 texture_size = 2
+_sections_unfolded = [ "Ground" ]
 
 [sub_resource type="Environment" id=3]
 
@@ -88,7 +88,7 @@ background_sky_custom_fov = 0.0
 background_color = Color( 0.00704956, 0.0820312, 0.0591853, 1 )
 background_energy = 1.0
 background_canvas_max_layer = 0
-ambient_light_color = Color( 0.0429688, 0.0429688, 0.0429688, 1 )
+ambient_light_color = Color( 0.316406, 0.316406, 0.316406, 1 )
 ambient_light_energy = 1.0
 ambient_light_sky_contribution = 1.0
 fog_enabled = false
@@ -158,7 +158,7 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Glow" ]
+_sections_unfolded = [ "Background", "Glow" ]
 
 [node name="game" type="Spatial" index="0"]
 
@@ -235,42 +235,6 @@ material/0 = SubResource( 1 )
 [node name="env" type="WorldEnvironment" parent="." index="2"]
 
 environment = SubResource( 3 )
-
-[node name="dir" type="DirectionalLight" parent="." index="3"]
-
-transform = Transform( -0.173145, -0.778852, -0.602835, 0.256388, -0.62662, 0.735943, -0.95094, -0.0271356, 0.308184, 0, 22.5217, 0 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 0.1
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.1
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-directional_shadow_mode = 2
-directional_shadow_split_1 = 0.1
-directional_shadow_split_2 = 0.2
-directional_shadow_split_3 = 0.5
-directional_shadow_blend_splits = false
-directional_shadow_normal_bias = 0.8
-directional_shadow_bias_split_scale = 0.25
-directional_shadow_depth_range = 0
-directional_shadow_max_distance = 200.0
-script = ExtResource( 4 )
-_sections_unfolded = [ "Light" ]
-
-[node name="init_spawn" type="Position3D" parent="." index="4"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="level_holder" type="Spatial" parent="." index="5"]
 
 
 [editable path="player1/player"]
