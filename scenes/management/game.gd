@@ -21,3 +21,6 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("exit_game"):
 		emit_signal("game_finished")
+
+sync func spawn_level(level_path, position):
+	pass

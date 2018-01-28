@@ -10,7 +10,7 @@ extents = Vector3( 6.58917, 6.11092, 10.7059 )
 
 [sub_resource type="BoxShape" id=2]
 
-extents = Vector3( 30.3883, 17.7599, 16.8983 )
+extents = Vector3( 30, 18, 17 )
 
 [sub_resource type="CylinderMesh" id=3]
 
@@ -222,9 +222,10 @@ tracks/2/keys = {
 
 [node name="level_end" type="Spatial" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8584, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+next_level = ""
 
 [node name="base" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -248,6 +249,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="end_area" type="Area" parent="." index="4"]
 
+editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -272,9 +274,10 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="finish" type="CollisionShape" parent="end_area" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71693, 10.9645, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 11, 0 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 [node name="close_door" type="Area" parent="." index="5"]
 
@@ -332,7 +335,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="player_1" type="MeshInstance" parent="lights" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 10.7 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -349,7 +352,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 [node name="player_2" type="MeshInstance" parent="lights" index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, -10.7 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -387,5 +390,9 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="body_entered" from="end_area" to="." method="end_area_entered"]
 
 [connection signal="body_exited" from="end_area" to="." method="end_area_exited"]
+
+[connection signal="body_entered" from="close_door" to="." method="close_door_entered"]
+
+[connection signal="body_exited" from="close_door" to="." method="close_door_exited"]
 
 

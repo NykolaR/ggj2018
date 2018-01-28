@@ -8,7 +8,11 @@ const DIM_ENERGY = 1.7
 const LIT_ENERGY = 4
 
 var players_in_end = 0
+var players_in_delete_level = 0
 var door_open = false
+
+signal spawn_next_level
+export(String) var next_level = ""
 
 sync func open_doors():
 	if door_open:
@@ -53,12 +57,24 @@ func _ready():
 sync func end_area_change(amount):
 	if is_network_master():
 		players_in_end += amount
-		print(players_in_end)
+		#print(players_in_end)
 		
 		if players_in_end == 2:
 			rpc("open_doors")
 		else:
 			rpc("close_doors")
+
+sync func delete_level_change(amount):
+	if is_network_master():
+		players_in_delete_level += amount
+		#print(players_in_delete_level)
+		
+		if players_in_delete_level == 2:
+			rpc("delete_level")
+
+sync func delete_level():
+	emit_signal("spawn_next_level", next_level, $next_spawn.to_global($next_spawn.translation))
+	get_parent().queue_free()
 
 func end_area_entered( body ):
 	rpc("end_area_change", 1)
@@ -67,3 +83,9 @@ func end_area_entered( body ):
 func end_area_exited( body ):
 	rpc("end_area_change", -1)
 	rpc("set_light", body.is_in_group("p1"), body.is_in_group("p2"), DIM)
+
+func close_door_entered( body ):
+	rpc("delete_level_change", 1)
+
+func close_door_exited( body ):
+	rpc("delete_level_change", -1)
