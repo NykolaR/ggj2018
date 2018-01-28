@@ -15,6 +15,7 @@ var movement_speed = 5
 var controllerExists = false
 
 onready var orb = get_parent().get_node("orb")
+onready var player = get_parent().get_node("player")
 
 func _ready():
 	var controllers = Input.get_connected_joypads()
@@ -60,20 +61,24 @@ func _physics_process(delta):
 			if controllerExists:
 				if Input.is_action_just_pressed("jump_controller"):
 					vspeed = jump
+					player.get_node("bloop2").play()
 			else:
 				if Input.is_action_just_pressed("jump"):
 					vspeed = jump
+					player.get_node("bloop2").play()
 		else:
 			if controllerExists:
 				if Input.is_action_just_pressed("jump_controller"):
 					if (airJumpsRemaining):
 						vspeed = jump / 1.40
 						airJumpsRemaining -= 1
+						player.get_node("bloop2").play()
 			else:
 				if Input.is_action_just_pressed("jump"):
 					if (airJumpsRemaining):
 						vspeed = jump / 1.40
 						airJumpsRemaining -= 1
+						player.get_node("bloop2").play()
 		
 		if orb.state == orb.ATTACHED:
 			orb.translation = translation + Vector3(0, 0.2, -0.1).rotated(Vector3(0, 1, 0), $cam_y.rotation.y)
@@ -87,9 +92,11 @@ func _physics_process(delta):
 			if controllerExists:
 				if Input.is_action_just_pressed("throw_controller"):
 					orb.rpc("_set_direction", Vector3(-sin($cam_y.rotation.y), $cam_y/cam_x.rotation.x, -cos($cam_y.rotation.y)))
+					orb.get_node("bloop").play()
 			else:
 				if Input.is_action_just_pressed("throw"):
 					orb.rpc("_set_direction", Vector3(-sin($cam_y.rotation.y), $cam_y/cam_x.rotation.x, -cos($cam_y.rotation.y)))
+					orb.get_node("bloop").play()
 
 func _input(event):
 	if not controllerExists:

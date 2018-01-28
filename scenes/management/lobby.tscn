@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/texture/title/platform.png" type="Texture" id=5]
 [ext_resource path="res://assets/texture/title/orb-png-11.png" type="Texture" id=6]
 [ext_resource path="res://assets/audio/music/erokia__ambient-wave-30.ogg" type="AudioStream" id=7]
-[ext_resource path="res://scenes/level_scenes/intro_level.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/level_scenes/levels_spawn/level4.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -231,7 +231,7 @@ _sections_unfolded = [ "Pause", "Transform" ]
 [node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 7 )
-volume_db = -4.0
+volume_db = 10.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -268,7 +268,7 @@ _sections_unfolded = [ "Mouse", "Visibility" ]
 
 [node name="game_holder" type="Spatial" parent="." index="4"]
 
-[node name="intro_level" parent="game_holder" index="0" instance=ExtResource( 8 )]
+[node name="level4" parent="game_holder" index="0" instance=ExtResource( 8 )]
 
 [connection signal="pressed" from="lobby/panel/host" to="." method="_on_host_pressed"]
 
