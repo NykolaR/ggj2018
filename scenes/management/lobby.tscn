@@ -1,19 +1,18 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/management/lobby.gd" type="Script" id=1]
 [ext_resource path="res://assets/texture/arts/cliff.png" type="Texture" id=2]
-[ext_resource path="res://assets/texture/title/galactic.png" type="Texture" id=3]
-[ext_resource path="res://assets/texture/title/hopscotch.png" type="Texture" id=4]
-[ext_resource path="res://assets/texture/title/platform.png" type="Texture" id=5]
-[ext_resource path="res://assets/texture/title/orb-png-11.png" type="Texture" id=6]
-[ext_resource path="res://assets/audio/music/erokia__ambient-wave-30.ogg" type="AudioStream" id=7]
-[ext_resource path="res://scenes/level_scenes/intro_level.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/level_scenes/intro_level_2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/level_scenes/levels_spawn/level1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/level_scenes/levels_spawn/level3.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/level_scenes/levels_spawn/level2.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/level_scenes/levels_spawn/level4.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/level_scenes/levels_spawn/end.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/newlogo.png" type="Texture" id=3]
+[ext_resource path="res://assets/texture/title/platform.png" type="Texture" id=4]
+[ext_resource path="res://assets/texture/title/orb-png-11.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/music/erokia__ambient-wave-30.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scenes/level_scenes/intro_level.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/level_scenes/intro_level_2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/level_scenes/levels_spawn/level1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/level_scenes/levels_spawn/level3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/level_scenes/levels_spawn/level2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/level_scenes/levels_spawn/level4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/level_scenes/levels_spawn/end.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -133,7 +132,7 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Background", "Glow" ]
+_sections_unfolded = [ "Background", "SSAO" ]
 
 [node name="main_alt" type="Node" index="0"]
 
@@ -171,6 +170,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
+_sections_unfolded = [ "Visibility" ]
 
 [node name="address_label" type="Label" parent="lobby/panel" index="0"]
 
@@ -310,20 +310,15 @@ _sections_unfolded = [ "custom_colors" ]
 
 [node name="Title" type="Sprite" parent="lobby/panel" index="6"]
 
-position = Vector2( 447.973, 246.34 )
+position = Vector2( 512, 380 )
 texture = ExtResource( 3 )
-
-[node name="Title2" type="Sprite" parent="lobby/panel/Title" index="0"]
-
-position = Vector2( 228.359, -78.5752 )
-rotation = 0.300346
-texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="plat" type="Sprite" parent="lobby" index="1"]
 
 position = Vector2( 688.349, 571.357 )
 rotation = -0.0645772
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="ball" type="Sprite" parent="lobby" index="2"]
@@ -332,12 +327,12 @@ light_mask = 87
 position = Vector2( 670.13, 293.636 )
 rotation = -0.0184622
 scale = Vector2( 0.106388, 0.0867627 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 volume_db = -4.0
 autoplay = true
 mix_target = 0
@@ -375,33 +370,31 @@ _sections_unfolded = [ "Mouse", "Visibility" ]
 
 [node name="game_holder" type="Spatial" parent="." index="4"]
 
-[node name="intro_level" parent="game_holder" index="0" instance=ExtResource( 8 )]
+[node name="intro_level" parent="game_holder" index="0" instance=ExtResource( 7 )]
 
 [node name="levels" type="Spatial" parent="game_holder" index="1"]
 
-editor/display_folded = true
-
-[node name="level_frame" parent="game_holder/levels" index="0" instance=ExtResource( 9 )]
+[node name="level_frame" parent="game_holder/levels" index="0" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0 )
 
-[node name="level1" parent="game_holder/levels" index="1" instance=ExtResource( 10 )]
+[node name="level1" parent="game_holder/levels" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 0 )
 
-[node name="level3" parent="game_holder/levels" index="2" instance=ExtResource( 11 )]
+[node name="level3" parent="game_holder/levels" index="2" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 0 )
 
-[node name="level2" parent="game_holder/levels" index="3" instance=ExtResource( 12 )]
+[node name="level2" parent="game_holder/levels" index="3" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 195, 0, 0 )
 
-[node name="level4" parent="game_holder/levels" index="4" instance=ExtResource( 13 )]
+[node name="level4" parent="game_holder/levels" index="4" instance=ExtResource( 12 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 243, 0, 0 )
 
-[node name="level_frame2" parent="game_holder/levels" index="5" instance=ExtResource( 14 )]
+[node name="level_frame2" parent="game_holder/levels" index="5" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 304, 0, 0 )
 

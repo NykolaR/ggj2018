@@ -26,7 +26,7 @@ func _physics_process(delta):
 		return
 	
 	if throwing:
-		print("throw")
+		#print("throw")
 		apply_impulse(Vector3(), dir.normalized() * THROW_STRENGTH)
 		throwing = false
 	#vspeed -= gravity

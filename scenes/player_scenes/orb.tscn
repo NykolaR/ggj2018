@@ -64,7 +64,10 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_enable = false
+distance_fade_enable = true
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 1.0
+_sections_unfolded = [ "Distance Fade", "Proximity Fade" ]
 
 [sub_resource type="SphereShape" id=3]
 
