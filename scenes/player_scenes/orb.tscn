@@ -70,12 +70,12 @@ _sections_unfolded = [ "Emission" ]
 
 radius = 0.2
 
-[node name="orb" type="RigidBody" index="0"]
+[node name="orb" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 33
+collision_mask = 33
 mode = 0
 mass = 1.0
 friction = 1.0
@@ -98,7 +98,7 @@ linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="mesh" type="MeshInstance" parent="." index="0"]
 

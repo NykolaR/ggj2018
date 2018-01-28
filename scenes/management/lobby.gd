@@ -23,7 +23,7 @@ func _player_connected(id): # player connected, begin the game!
 	game.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
 	
 	#get_tree().get_root().add_child(game)
-	add_child(game)
+	$game_holder.add_child(game)
 	$lobby.hide() # hide lobby screen
 
 func _player_disconnected(id):
@@ -49,9 +49,9 @@ func _server_disconnected():
 ### GAME MANAGEMENT FUNCTIONS ###
 
 func _end_game(with_error=""):
-	if (has_node("game")):
+	if (has_node("game_holder/game")):
 		#erase pong scene
-		$game.free() # erase immediately, otherwise network might show errors (this is why we connected deferred above)
+		$game_holder/game.free() # erase immediately, otherwise network might show errors (this is why we connected deferred above)
 		$lobby.show()
 	
 	get_tree().set_network_peer(null) #remove peer

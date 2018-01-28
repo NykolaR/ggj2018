@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/management/lobby.gd" type="Script" id=1]
 [ext_resource path="res://assets/texture/arts/cliff.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/texture/title/platform.png" type="Texture" id=5]
 [ext_resource path="res://assets/texture/title/orb-png-11.png" type="Texture" id=6]
 [ext_resource path="res://assets/audio/music/erokia__ambient-wave-30.ogg" type="AudioStream" id=7]
+[ext_resource path="res://scenes/level_scenes/intro_level.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -27,7 +28,7 @@ tracks/0/keys = {
 "values": [ Vector2( -65, 450 ), Vector2( 530, 250 ), Vector2( 1070, 420 ), Vector2( 1070, 420 ), Vector2( 540, 225 ), Vector2( -85, 340 ) ]
 }
 
-[node name="main" type="Node" index="0"]
+[node name="main_alt" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -265,6 +266,12 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
 _sections_unfolded = [ "Mouse", "Visibility" ]
+
+[node name="game_holder" type="Spatial" parent="." index="4"]
+
+[node name="intro_level" parent="game_holder" index="0" instance=ExtResource( 8 )]
+
+[node name="level_holder" type="Spatial" parent="game_holder" index="1"]
 
 [connection signal="pressed" from="lobby/panel/host" to="." method="_on_host_pressed"]
 

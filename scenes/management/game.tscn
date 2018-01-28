@@ -167,14 +167,15 @@ script = ExtResource( 1 )
 
 [node name="player1" type="Spatial" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.4829, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="player" parent="player1" index="0" groups=[
 "p1",
 ] instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 1.2, -3 )
 collision_layer = 2
 collision_mask = 9
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -189,18 +190,18 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3 )
 collision_layer = 0
 collision_mask = 17
-_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="player2" type="Spatial" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.2851, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="player" parent="player2" index="0" groups=[
 "p2",
 ] instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 3 )
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 1.2, 3 )
 collision_layer = 4
 collision_mask = 17
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -212,10 +213,10 @@ current = true
 
 [node name="orb" parent="player2" index="1" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 3 )
 collision_layer = 0
 collision_mask = 9
-_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="mesh" parent="player2/orb" index="0"]
 
@@ -227,10 +228,11 @@ environment = SubResource( 3 )
 
 [node name="dir" type="DirectionalLight" parent="." index="3"]
 
-transform = Transform( 0.130123, -0.76375, -0.632261, 0.106211, -0.623276, 0.774756, -0.985793, -0.167967, 1.58133e-05, 0, 22.5217, 0 )
+transform = Transform( -0.173145, -0.778852, -0.602835, 0.256388, -0.62662, 0.735943, -0.95094, -0.0271356, 0.308184, 0, 22.5217, 0 )
+visible = false
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
+light_energy = 0.1
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
@@ -252,6 +254,7 @@ directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 script = ExtResource( 4 )
+_sections_unfolded = [ "Light" ]
 
 
 [editable path="player1/player"]

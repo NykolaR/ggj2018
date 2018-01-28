@@ -60,6 +60,7 @@ throw_controller=[ Object(InputEventJoypadButton,"resource_local_to_scene":false
 3d_physics/layer_4="player_1_collides"
 3d_render/layer_5="player_2_collides"
 3d_physics/layer_5="player_2_collides"
+3d_physics/layer_6="orb_collide"
 
 [physics]
 
