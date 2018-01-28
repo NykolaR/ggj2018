@@ -7,7 +7,7 @@ path="res://.import/start.dae-59cd6103c680ab11bdf610b911ef87f3.scn"
 [deps]
 
 source_file="res://assets/models/start.dae"
-source_md5="d20535a3be5957c1bd6045dde9db9bcf"
+source_md5="2c86fcc9bd37287dae512556b77252f2"
 
 dest_files=[ "res://.import/start.dae-59cd6103c680ab11bdf610b911ef87f3.scn" ]
 dest_md5="667ba49dc921e660325d7fe66ee1561e"

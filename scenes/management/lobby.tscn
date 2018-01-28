@@ -271,8 +271,6 @@ _sections_unfolded = [ "Mouse", "Visibility" ]
 
 [node name="intro_level" parent="game_holder" index="0" instance=ExtResource( 8 )]
 
-[node name="level_holder" type="Spatial" parent="game_holder" index="1"]
-
 [connection signal="pressed" from="lobby/panel/host" to="." method="_on_host_pressed"]
 
 [connection signal="pressed" from="lobby/panel/join" to="." method="_on_join_pressed"]

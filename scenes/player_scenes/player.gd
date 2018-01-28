@@ -76,7 +76,7 @@ func _physics_process(delta):
 						airJumpsRemaining -= 1
 		
 		if orb.state == orb.ATTACHED:
-			orb.translation = translation + Vector3(0, 0.2, -0.2).rotated(Vector3(0, 1, 0), $cam_y.rotation.y)
+			orb.translation = translation + Vector3(0, 0.2, -0.1).rotated(Vector3(0, 1, 0), $cam_y.rotation.y)
 		elif orb.state == orb.RETURNING:
 			orb.translation = orb.translation - ( orb.translation - translation ) / returnDistance
 			returnDistance -= 1
@@ -96,4 +96,4 @@ func _input(event):
 		if event is InputEventMouseMotion:
 		    $cam_y.rotate_y(event.relative.x * sensitivity.x)
 		    $cam_y/cam_x.rotate_x(clamp(event.relative.y * sensitivity.y, -0.2, 0.2))
-		    $cam_y/cam_x.rotation.x = clamp($cam_y/cam_x.rotation.x, -1, 1)
+		    $cam_y/cam_x.rotation.x = clamp($cam_y/cam_x.rotation.x, -1.3, 1.3)

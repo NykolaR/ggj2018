@@ -266,6 +266,11 @@ directional_shadow_max_distance = 200.0
 script = ExtResource( 4 )
 _sections_unfolded = [ "Light" ]
 
+[node name="init_spawn" type="Position3D" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
 
 [editable path="player1/player"]
 [editable path="player1/orb"]
