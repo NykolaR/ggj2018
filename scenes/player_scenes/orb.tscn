@@ -70,7 +70,7 @@ distance_fade_enable = false
 
 radius = 0.2
 
-[node name="orb" type="RigidBody" index="0"]
+[node name="orb" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

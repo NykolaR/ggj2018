@@ -155,7 +155,6 @@ size_flags_vertical = 1
 
 [node name="panel" type="TextureRect" parent="lobby" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -209,7 +208,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-text = "142.3.210.101"
+text = "127.0.0.1"
 focus_mode = 2
 context_menu_enabled = true
 placeholder_alpha = 0.6
@@ -379,6 +378,8 @@ _sections_unfolded = [ "Mouse", "Visibility" ]
 [node name="intro_level" parent="game_holder" index="0" instance=ExtResource( 8 )]
 
 [node name="levels" type="Spatial" parent="game_holder" index="1"]
+
+editor/display_folded = true
 
 [node name="level_frame" parent="game_holder/levels" index="0" instance=ExtResource( 9 )]
 

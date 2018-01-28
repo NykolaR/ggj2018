@@ -8,7 +8,7 @@
 radius = 0.5
 height = 1.0
 
-[node name="player" type="KinematicBody"]
+[node name="player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -60,7 +60,7 @@ _sections_unfolded = [ "Transform" ]
 
 stream = ExtResource( 2 )
 attenuation_model = 0
-unit_db = 20.0
+unit_db = -2.0
 unit_size = 1.0
 max_db = 3.0
 autoplay = false
