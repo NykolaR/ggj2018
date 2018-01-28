@@ -83,7 +83,7 @@ func _physics_process(delta):
 			if not returnDistance:
 				returnDistance = MAX_RETURN_DISTANCE
 				orb._set_Attached()
-		if orb.state == orb.ATTACHED or orb.state == orb.PHYSICS:
+		if orb.state == orb.ATTACHED or orb.state == orb.PHYSICS or orb.state == orb.PAUSED:
 			if controllerExists:
 				if Input.is_action_just_pressed("throw_controller"):
 					orb.rpc("_set_direction", Vector3(-sin($cam_y.rotation.y), $cam_y/cam_x.rotation.x, -cos($cam_y.rotation.y)))

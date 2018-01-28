@@ -8,7 +8,7 @@ var throwing = false
 
 const THROW_STRENGTH = 15
 
-enum ORB_STATE {ATTACHED, RETURNING, PHYSICS}
+enum ORB_STATE {ATTACHED, RETURNING, PAUSED, PHYSICS}
 
 sync func sync_pos(pos):
 	translation = pos
@@ -21,7 +21,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	#print("master " + str(translation))
-	if state == ATTACHED or state == RETURNING:
+	if state == ATTACHED or state == RETURNING or state == PAUSED:
 		mode = RigidBody.MODE_KINEMATIC
 		return
 	
@@ -38,11 +38,12 @@ sync func _set_Attached ():
 	state = ATTACHED
 
 sync func _set_direction(direction, strength=THROW_STRENGTH):
-	rpc("sync_pos", translation)
 	if state == PHYSICS:
+		state = PAUSED
+	elif state == PAUSED:
 		state = RETURNING
-		return
 	else:
+		rpc("sync_pos", translation)
 		dir = direction
 		throwing = true
 		state = PHYSICS
