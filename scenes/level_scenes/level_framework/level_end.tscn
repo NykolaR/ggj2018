@@ -1,0 +1,479 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/level_scenes/level_end.gd" type="Script" id=1]
+[ext_resource path="res://scenes/platforms/platform_global.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/platforms/door.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 5.67403, 6.11092, 10.7059 )
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 30.3883, 17.7599, 16.8983 )
+
+[sub_resource type="CylinderMesh" id=3]
+
+top_radius = 1.0
+bottom_radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 4
+
+[sub_resource type="SpatialMaterial" id=4]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = true
+emission = Color( 0.949216, 0.211333, 0.211349, 1 )
+emission_energy = 1.5
+emission_operator = 0
+emission_on_uv2 = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Albedo", "Emission" ]
+
+[sub_resource type="SpatialMaterial" id=5]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = true
+emission = Color( 0.949216, 0.211333, 0.211349, 1 )
+emission_energy = 1.5
+emission_operator = 0
+emission_on_uv2 = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Emission" ]
+
+[sub_resource type="Animation" id=6]
+
+length = 1.0
+loop = false
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("door/door1:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, 15.1 ), Vector3( 0, 10, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door/door2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, -15.1 ), Vector3( 0, 10, -5 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+
+length = 2.0
+loop = false
+step = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("door/door1:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -4, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, 5 ), Vector3( 0, 10, 15.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door/door2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -4, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 10, -5 ), Vector3( 0, 10, -15.1 ) ]
+}
+
+[sub_resource type="ProceduralSky" id=8]
+
+radiance_size = 4
+sky_top_color = Color( 0.847656, 0.8214, 0.751633, 1 )
+sky_horizon_color = Color( 0.531614, 0.458435, 0.792969, 1 )
+sky_curve = 0.25
+sky_energy = 1.0
+ground_bottom_color = Color( 0.130241, 0.125977, 0.167969, 1 )
+ground_horizon_color = Color( 0.121623, 0.0925903, 0.160156, 1 )
+ground_curve = 0.01
+ground_energy = 1.0
+sun_color = Color( 0.570312, 0.570312, 0.570312, 1 )
+sun_latitude = 6.0
+sun_longitude = 0.0
+sun_angle_min = 1.0
+sun_angle_max = 10.61
+sun_curve = 0.42871
+sun_energy = 0.0
+texture_size = 2
+_sections_unfolded = [ "Ground", "Sky", "Sun" ]
+
+[sub_resource type="Environment" id=9]
+
+background_mode = 2
+background_sky = SubResource( 8 )
+background_sky_custom_fov = 0.0
+background_color = Color( 0.00704956, 0.0820312, 0.0591853, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0.0273438, 0.0273438, 0.0273438, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 2
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = true
+glow_levels/1 = false
+glow_levels/2 = true
+glow_levels/3 = false
+glow_levels/4 = true
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 1.0
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 1
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = true
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Background", "Glow" ]
+
+[node name="level_end" type="Spatial" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8584, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="base" parent="." index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 10, 0, 0, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="right" parent="." index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, 11 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="left" parent="." index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -11 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="roof" parent="." index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 10, 0, 16, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="end_area" type="Area" parent="." index="4"]
+
+editor/display_folded = true
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 0
+collision_mask = 6
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="finish" type="CollisionShape" parent="end_area" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.627316, 10.9645, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="close_door" type="Area" parent="." index="5"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9533, 0, 0 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 0
+collision_mask = 6
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="finish" type="CollisionShape" parent="close_door" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9792, 10.9645, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="door" type="Spatial" parent="." index="6"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="door1" parent="door" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 5, 0, 10, 5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="door2" parent="door" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 5, 0, 10, -5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="lights" type="Spatial" parent="." index="7"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109006, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="player_1" type="MeshInstance" parent="lights" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 5 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 4 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="player_2" type="MeshInstance" parent="lights" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -5 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = SubResource( 5 )
+_sections_unfolded = [ "Transform", "material" ]
+
+[node name="door_control" type="AnimationPlayer" parent="." index="8"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/close = SubResource( 6 )
+anims/open = SubResource( 7 )
+blend_times = [  ]
+autoplay = ""
+
+[node name="Camera" type="Camera" parent="." index="9"]
+
+transform = Transform( 0.00624138, 0.291716, -0.956485, -0.0019035, 0.956505, 0.29171, 0.999979, 0, 0.00652519, -11.4632, 8.15451, 0 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = false
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
+
+environment = SubResource( 9 )
+
+[node name="next_spawn" type="Position3D" parent="." index="11"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="tree_entered" from="roof" to="roof" method="show"]
+
+

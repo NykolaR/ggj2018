@@ -1,0 +1,274 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/management/lobby.gd" type="Script" id=1]
+[ext_resource path="res://assets/texture/arts/cliff.png" type="Texture" id=2]
+[ext_resource path="res://assets/texture/title/galactic.png" type="Texture" id=3]
+[ext_resource path="res://assets/texture/title/hopscotch.png" type="Texture" id=4]
+[ext_resource path="res://assets/texture/title/platform.png" type="Texture" id=5]
+[ext_resource path="res://assets/texture/title/orb-png-11.png" type="Texture" id=6]
+[ext_resource path="res://assets/audio/music/erokia__ambient-wave-30.ogg" type="AudioStream" id=7]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "main"
+length = 8.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("lobby/ball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -65, 450 ), Vector2( 530, 250 ), Vector2( 1070, 420 ), Vector2( 1070, 420 ), Vector2( 540, 225 ), Vector2( -85, 340 ) ]
+}
+
+[node name="main" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="lobby" type="Control" parent="." index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="panel" type="TextureRect" parent="lobby" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 1021.0
+margin_bottom = 598.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="address_label" type="Label" parent="lobby/panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 256.0
+margin_top = 202.0
+margin_right = 312.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Address:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="address" type="LineEdit" parent="lobby/panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 336.0
+margin_top = 199.0
+margin_right = 694.0
+margin_bottom = 223.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "192.168.43.4"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = true
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="host" type="Button" parent="lobby/panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 339.0
+margin_top = 252.0
+margin_right = 431.0
+margin_bottom = 280.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Host"
+flat = false
+align = 1
+
+[node name="join" type="Button" parent="lobby/panel" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 602.0
+margin_top = 253.0
+margin_right = 694.0
+margin_bottom = 281.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Join"
+flat = false
+align = 1
+
+[node name="status_ok" type="Label" parent="lobby/panel" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 338.0
+margin_top = 298.0
+margin_right = 691.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.0546875, 1, 0, 1 )
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="status_fail" type="Label" parent="lobby/panel" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 338.0
+margin_top = 298.0
+margin_right = 691.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="Title" type="Sprite" parent="lobby/panel" index="6"]
+
+position = Vector2( 447.973, 246.34 )
+texture = ExtResource( 3 )
+
+[node name="Title2" type="Sprite" parent="lobby/panel/Title" index="0"]
+
+position = Vector2( 228.359, -78.5752 )
+rotation = 0.300346
+texture = ExtResource( 4 )
+
+[node name="plat" type="Sprite" parent="lobby" index="1"]
+
+position = Vector2( 688.349, 571.357 )
+rotation = -0.0645772
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="ball" type="Sprite" parent="lobby" index="2"]
+
+light_mask = 87
+position = Vector2( 670.13, 293.636 )
+rotation = -0.0184622
+scale = Vector2( 0.106388, 0.0867627 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="background_music" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 7 )
+volume_db = -4.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="lobby_anim" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = "main"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/main = SubResource( 1 )
+blend_times = [  ]
+autoplay = "main"
+
+[node name="fader" type="ColorRect" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -22.0
+margin_top = -22.0
+margin_right = 1051.0
+margin_bottom = 626.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+_sections_unfolded = [ "Mouse", "Visibility" ]
+
+[connection signal="pressed" from="lobby/panel/host" to="." method="_on_host_pressed"]
+
+[connection signal="pressed" from="lobby/panel/join" to="." method="_on_join_pressed"]
+
+
