@@ -11,10 +11,6 @@
 editor/display_folded = false
 transform = Transform( 2.523, 0, 0, 0, 1, 0, 0, 0, 1, 19.7055, 0, 0 )
 
-[node name="level_end" parent="." index="2"]
-
-next_level = "res://scenes/level_scenes/levels_spawn/level4.tscn"
-
 [node name="player_1_plats" type="Spatial" parent="." index="3"]
 
 editor/display_folded = true
