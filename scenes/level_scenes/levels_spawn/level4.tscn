@@ -26,7 +26,7 @@ transform = Transform( 3.58175, 0, -0.262513, 0, 10, 0, 9.27273, 0, 0.71635, -1.
 
 [node name="platform_global" parent="level_middle/platform_global2" index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 0.134325, 0, 0.0745645, 0, 1, 0, -13.1692, 0, 0.134326, 1.05128, -0.00991592, -12.0337 )
+transform = Transform( 0.134325, 0, 0.0745645, 0, 1, 0, -13.1692, 0, 0.134326, 1.04977, -0.00991598, -12.0671 )
 
 [node name="platform_global2" parent="level_middle/platform_global2" index="3" instance=ExtResource( 2 )]
 
@@ -40,17 +40,9 @@ transform = Transform( 3.68243, 0, 0.254503, 0, 9.99999, 0, -8.98982, 0, 0.73648
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4973, 0, 0 )
 
-[node name="platform_player_1" type="StaticBody" parent="." index="3" instance=ExtResource( 3 )]
+[node name="platform_player_1" parent="." index="3" instance=ExtResource( 3 )]
 
 transform = Transform( 2.65793, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 4, -3 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 8
-collision_mask = 0
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="platform_player_3" parent="." index="4" instance=ExtResource( 3 )]
@@ -80,12 +72,12 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="platform_player_11" parent="." index="9" instance=ExtResource( 3 )]
 
-transform = Transform( 2.03186, 0, -0.644681, 0, 1, 0, 1.71352, 0, 0.764452, 29.0949, 3.99923, -6.03409 )
+transform = Transform( 1.39211, 0, 0.851867, 0.0172148, 0.999971, -0.00398214, -2.26414, 0.00760303, 0.523742, 30.6246, 4, 9.82305 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="platform_player_19" parent="." index="10" instance=ExtResource( 3 )]
+[node name="platform_player_12" parent="." index="10" instance=ExtResource( 3 )]
 
-transform = Transform( 2.03186, 0, -0.644681, 0, 1, 0, 1.71352, 0, 0.764452, 32.886, 3.99923, -2.83852 )
+transform = Transform( 1.2371, 0, 0.88508, 0, 1, 0, -2.35249, 0, 0.465438, 33.3494, 4.08982, 5.19071 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="platform_player_13" parent="." index="11" instance=ExtResource( 3 )]
@@ -98,17 +90,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 transform = Transform( 2.6561, 0, 0.0370896, 0, 1, 0, -0.0985818, 0, 0.999312, 43.121, 3.99923, 5.18849 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="platform_player_2" type="StaticBody" parent="." index="13" instance=ExtResource( 4 )]
+[node name="platform_player_2" parent="." index="13" instance=ExtResource( 4 )]
 
 transform = Transform( 2.65793, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 4, 7.24007 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 16
-collision_mask = 0
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="platform_player_4" parent="." index="14" instance=ExtResource( 4 )]
@@ -136,14 +120,14 @@ _sections_unfolded = [ "Collision", "Transform" ]
 transform = Transform( 2.64963, 0, 0.0789868, 0, 1, 0, -0.209941, 0, 0.996876, 25.4065, 3.9906, -7.21237 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="platform_player_12" parent="." index="19" instance=ExtResource( 4 )]
+[node name="platform_player_19" parent="." index="19" instance=ExtResource( 4 )]
 
-transform = Transform( 1.56662, 0, 0.807832, 0, 1, 0, -2.14716, 0, 0.589413, 29.8649, 3.99115, 10.0999 )
+transform = Transform( 2.01423, 0, -0.652465, 0, 1, 0, 1.73421, 0, 0.757819, 29.344, 3.9731, -5.86429 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="platform_player_20" parent="." index="20" instance=ExtResource( 4 )]
 
-transform = Transform( 1.56662, 0, 0.807832, 0, 1, 0, -2.14716, 0, 0.589413, 32.9735, 3.99115, 5.79487 )
+transform = Transform( 1.77207, 0, -0.745317, 0, 1, 0, 1.981, 0, 0.666711, 33.0523, 3.98145, -2.22181 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="platform_player_14" parent="." index="21" instance=ExtResource( 4 )]
