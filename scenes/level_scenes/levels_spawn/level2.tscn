@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/level_scenes/level_framework/level_frame.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/platforms/platform_player_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/platforms/platform_player_2.tscn" type="PackedScene" id=3]
+
+[node name="level2" index="0" instance=ExtResource( 1 )]
+
+[node name="level_middle" parent="." index="1"]
+
+editor/display_folded = false
+transform = Transform( 2.75661, 0, 0, 0, 1, 0, 0, 0, 1, 19.7055, 0, 0 )
+
+[node name="player_1_platforms" type="Spatial" parent="." index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7055, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_player_1" parent="player_1_platforms" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_2" parent="player_1_platforms" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 1.41421, 0, -0.707107, 0, 1, 0, 1.41421, 0, 0.707107, -7, 0, -0.5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_3" parent="player_1_platforms" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, -0.866025, 0, 1, 0, 1.73205, 0, 0.5, -4.5, 0, 2.5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_4" parent="player_1_platforms" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_5" parent="player_1_platforms" index="4" instance_placeholder="res://scenes/platforms/platform_player_1.tscn"]
+
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_6" parent="player_1_platforms" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 1.41421, 0, 0.707107, 0, 1, 0, -1.41421, 0, 0.707107, 4, 0, 3 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_7" parent="player_1_platforms" index="6" instance=ExtResource( 2 )]
+
+transform = Transform( 1.41421, -0.707107, 0, 1.41421, 0.707107, 0, 0, 0, 1, 7, 1.5, 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_8" parent="player_1_platforms" index="7" instance=ExtResource( 2 )]
+
+transform = Transform( 1.41421, -0.707107, 0, 1.41421, 0.707107, 0, 0, 0, 1, 9.5, 3, 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="player_2_platforms" type="Spatial" parent="." index="4"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="platform_player_2" parent="player_2_platforms" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_4" parent="player_2_platforms" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 16, 5.3, 3 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_5" parent="player_2_platforms" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( -8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 18.5, 5.3, 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_6" parent="player_2_platforms" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( -8.74228e-08, 0, 1, 0, 1, 0, -2, 0, -4.37114e-08, 18.5, 5.3, -1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_7" parent="player_2_platforms" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1.73205, 0, -0.5, 0, 1, 0, 1, 0, 0.866025, 21, 5.3, -1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_8" parent="player_2_platforms" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( 1.73205, 0, 0.5, 0, 1, 0, -1, 0, 0.866025, 23, 5.3, -1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_9" parent="player_2_platforms" index="6" instance=ExtResource( 3 )]
+
+transform = Transform( 1.73205, 0, 0.5, 0, 1, 0, -1, 0, 0.866025, 26, 5.3, -2.8 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_10" parent="player_2_platforms" index="7" instance=ExtResource( 3 )]
+
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 29, 5.3, -3.5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="platform_player_3" parent="player_2_platforms" index="8" instance=ExtResource( 3 )]
+
+transform = Transform( 1.22474, -0.353553, 0.707107, 1, 0.866025, 0, -1.22474, 0.353553, 0.707107, 13, 4.6, 4 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+
