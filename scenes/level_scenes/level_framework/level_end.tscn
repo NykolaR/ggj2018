@@ -16,8 +16,8 @@ extents = Vector3( 30, 18, 17 )
 
 top_radius = 1.0
 bottom_radius = 1.0
-height = 2.0
-radial_segments = 64
+height = 0.5
+radial_segments = 16
 rings = 4
 
 [sub_resource type="SpatialMaterial" id=4]
@@ -329,13 +329,11 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="lights" type="Spatial" parent="." index="7"]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109006, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="player_1" type="MeshInstance" parent="lights" index="0"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 10.7 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 10 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -352,7 +350,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 [node name="player_2" type="MeshInstance" parent="lights" index="1"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, -10.7 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, -10 )
 layers = 1
 material_override = null
 cast_shadow = 1

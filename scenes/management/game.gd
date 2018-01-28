@@ -22,5 +22,9 @@ func _input(event):
 	if event.is_action_pressed("exit_game"):
 		emit_signal("game_finished")
 
-sync func spawn_level(level_path, position):
-	pass
+sync func spawn_level(level_path, transl):
+	# spawn level
+	var level = load(level_path).instance()
+	level.translation = transl
+	
+	level.get_node("level_end").connect("spawn_next_level", self, "spawn_level")
