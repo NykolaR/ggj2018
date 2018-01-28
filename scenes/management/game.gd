@@ -9,7 +9,7 @@ func _ready():
 		$player2.set_network_master(get_tree().get_network_connected_peers()[0])
 		$player1/player/cam_y/cam_x/camera.current = true
 		
-		spawn_level("res://scenes/level_scenes/intro_level_2.tscn", init_spawn)
+		rfc("spawn", "res://scenes/level_scenes/intro_level_2.tscn", $init_spawn.translation)
 	elif not get_tree().network_peer == null:
 		# else, give control to self (recursive)
 		$player2.set_network_master(get_tree().get_network_unique_id())
@@ -30,3 +30,5 @@ sync func spawn_level(level_path, transl):
 	level.translation = transl
 	
 	level.get_node("level_end").connect("spawn_next_level", self, "spawn_level")
+	
+	add_child(level)

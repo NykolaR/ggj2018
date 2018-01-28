@@ -4,12 +4,16 @@
 [ext_resource path="res://scenes/platforms/platform_player_1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/platforms/platform_player_2.tscn" type="PackedScene" id=3]
 
-[node name="level1" index="0" instance=ExtResource( 1 )]
+[node name="level1" instance=ExtResource( 1 )]
 
 [node name="level_middle" parent="." index="1"]
 
 editor/display_folded = false
 transform = Transform( 2.523, 0, 0, 0, 1, 0, 0, 0, 1, 19.7055, 0, 0 )
+
+[node name="level_end" parent="." index="2"]
+
+next_level = "res://scenes/level_scenes/levels_spawn/level4.tscn"
 
 [node name="player_1_plats" type="Spatial" parent="." index="3"]
 

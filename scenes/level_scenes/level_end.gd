@@ -73,7 +73,8 @@ sync func delete_level_change(amount):
 			rpc("delete_level")
 
 sync func delete_level():
-	emit_signal("spawn_next_level", next_level, $next_spawn.to_global($next_spawn.translation))
+	get_parent().get_parent().rfc("spawn_level", next_level, $next_spawn.to_global($next_spawn.translation))
+	#emit_signal("spawn_next_level", next_level, $next_spawn.to_global($next_spawn.translation))
 	get_parent().queue_free()
 
 func end_area_entered( body ):
