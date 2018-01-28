@@ -174,11 +174,14 @@ _sections_unfolded = [ "Transform" ]
 "p1",
 ] instance=ExtResource( 2 )]
 
-editor/display_folded = true
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 1.2, -3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3 )
 collision_layer = 2
 collision_mask = 9
 _sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="cam_y" parent="player1/player" index="0"]
+
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0.5, 0 )
 
 [node name="camera" parent="player1/player/cam_y/cam_x" index="0"]
 
@@ -200,11 +203,14 @@ _sections_unfolded = [ "Transform" ]
 "p2",
 ] instance=ExtResource( 2 )]
 
-editor/display_folded = true
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 1.2, 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 3 )
 collision_layer = 4
 collision_mask = 17
 _sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="cam_y" parent="player2/player" index="0"]
+
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0.5, 0 )
 
 [node name="camera" parent="player2/player/cam_y/cam_x" index="0"]
 
