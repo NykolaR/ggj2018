@@ -12,19 +12,19 @@ func _ready():
 
 func _set_status(text, is_ok): # set status labels
 	if (is_ok):
-		$panel/status_ok.set_text(text)
-		$panel/status_fail.set_text("")
+		$lobby/panel/status_ok.set_text(text)
+		$lobby/panel/status_fail.set_text("")
 	else:
-		$panel/status_ok.set_text("")
-		$panel/status_fail.set_text(text)
+		$lobby/panel/status_ok.set_text("")
+		$lobby/panel/status_fail.set_text(text)
 
 func _player_connected(id): # player connected, begin the game!
-	var game = load("res://game.tscn").instance()
+	var game = load("res://scenes/management/game.tscn").instance()
 	game.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
 	
 	#get_tree().get_root().add_child(game)
 	add_child(game)
-	hide() # hide lobby screen
+	$lobby.hide() # hide lobby screen
 
 func _player_disconnected(id):
 	if (get_tree().is_network_server()):
@@ -40,8 +40,8 @@ func _connected_fail(): # callback from scenetree for clients
 	
 	get_tree().set_network_peer(null) #remove peer
 	
-	get_node("panel/join").set_disabled(false)
-	get_node("panel/host").set_disabled(false)
+	$lobby/panel/join.set_disabled(false)
+	$lobby/panel/host.set_disabled(false)
 
 func _server_disconnected():
 	_end_game("Server disconnected")
@@ -51,13 +51,13 @@ func _server_disconnected():
 func _end_game(with_error=""):
 	if (has_node("game")):
 		#erase pong scene
-		get_node("game").free() # erase immediately, otherwise network might show errors (this is why we connected deferred above)
-		show()
+		$game.free() # erase immediately, otherwise network might show errors (this is why we connected deferred above)
+		$lobby.show()
 	
 	get_tree().set_network_peer(null) #remove peer
 	
-	get_node("panel/join").set_disabled(false)
-	get_node("panel/host").set_disabled(false)
+	$lobby/panel/join.set_disabled(false)
+	$lobby/panel/host.set_disabled(false)
 	
 	_set_status(with_error,false)
 	
@@ -73,11 +73,11 @@ func _on_host_pressed():
 		return
 		
 	get_tree().set_network_peer(peer)
-	get_node("panel/host").set_disabled(true)
+	$lobby/panel/host.set_disabled(true)
 	_set_status("Waiting for player...",true)
 
 func _on_join_pressed():
-	var ip = get_node("panel/address").get_text()
+	var ip = $lobby/panel/address.get_text()
 	if (not ip.is_valid_ip_address()):
 		_set_status("IP address is invalid",false)
 		return

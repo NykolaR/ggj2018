@@ -169,7 +169,9 @@ script = ExtResource( 1 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.4829, 0 )
 
-[node name="player" parent="player1" index="0" instance=ExtResource( 2 )]
+[node name="player" parent="player1" index="0" groups=[
+"p1",
+] instance=ExtResource( 2 )]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3 )
@@ -183,6 +185,7 @@ cull_mask = 1048567
 
 [node name="orb" parent="player1" index="1" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3 )
 collision_layer = 0
 collision_mask = 17
@@ -192,7 +195,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.2851, 0 )
 
-[node name="player" parent="player2" index="0" instance=ExtResource( 2 )]
+[node name="player" parent="player2" index="0" groups=[
+"p2",
+] instance=ExtResource( 2 )]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 3 )

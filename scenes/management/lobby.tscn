@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ Vector2( -65, 450 ), Vector2( 530, 250 ), Vector2( 1070, 420 ), Vector2( 1070, 420 ), Vector2( 540, 225 ), Vector2( -85, 340 ) ]
 }
 
-[node name="main" type="Node"]
+[node name="main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -48,7 +48,6 @@ size_flags_vertical = 1
 
 [node name="panel" type="TextureRect" parent="lobby" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

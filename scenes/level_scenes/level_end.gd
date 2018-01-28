@@ -7,7 +7,37 @@ const LIT_COLOR = Color(0.4, 0.8, 0.2)
 const DIM_ENERGY = 1.7
 const LIT_ENERGY = 4
 
-sync func set_level(material, level):
+var players_in_end = 0
+var door_open = false
+
+sync func open_doors():
+	if door_open:
+		return
+	if $door_control.is_playing():
+		if (not $door_control.current_animation == "open"):
+			$door_control.queue("open")
+		return
+	elif not door_open:
+		$door_control.play("open")
+
+sync func close_doors():
+	if $door_control.is_playing():
+		if (not $door_control.current_animation == "close"):
+			$door_control.queue("close")
+		return
+	elif door_open:
+		$door_control.play("close")
+
+sync func set_light(player_one, player_two, level):
+	var mat
+	if player_one:
+		mat = $lights/player_1.get_surface_material(0)
+	if player_two:
+		mat = $lights/player_2.get_surface_material(0)
+	
+	set_level(mat, level)
+
+func set_level(material, level):
 	if level == DIM:
 		material.emission = DIM_COLOR
 		material.emission_energy = DIM_ENERGY
@@ -20,5 +50,20 @@ func _ready():
 		rpc("set_level", $lights/player_1.get_surface_material(0), DIM)
 		rpc("set_level", $lights/player_2.get_surface_material(0), DIM)
 
-sync func player_enter(player):
-	pass
+sync func end_area_change(amount):
+	if is_network_master():
+		players_in_end += amount
+		print(players_in_end)
+		
+		if players_in_end == 2:
+			rpc("open_doors")
+		else:
+			rpc("close_doors")
+
+func end_area_entered( body ):
+	rpc("end_area_change", 1)
+	rpc("set_light", body.is_in_group("p1"), body.is_in_group("p2"), LIT)
+
+func end_area_exited( body ):
+	rpc("end_area_change", -1)
+	rpc("set_light", body.is_in_group("p1"), body.is_in_group("p2"), DIM)

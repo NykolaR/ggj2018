@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 5.67403, 6.11092, 10.7059 )
+extents = Vector3( 6.58917, 6.11092, 10.7059 )
 
 [sub_resource type="BoxShape" id=2]
 
@@ -161,6 +161,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 0, 10, -15.1 ), Vector3( 0, 10, -5 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "door_open", false ],
+"method": "set"
+} ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -190,6 +204,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( -4, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 10, -5 ), Vector3( 0, 10, -15.1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "door_open", true ],
+"method": "set"
+} ]
 }
 
 [sub_resource type="ProceduralSky" id=8]
@@ -293,7 +321,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background", "Glow" ]
 
-[node name="level_end" type="Spatial" index="0"]
+[node name="level_end" type="Spatial"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8584, 0, 0 )
 script = ExtResource( 1 )
@@ -321,7 +349,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="end_area" type="Area" parent="." index="4"]
 
-editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -346,7 +373,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="finish" type="CollisionShape" parent="end_area" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.627316, 10.9645, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71693, 10.9645, 0 )
 shape = SubResource( 1 )
 disabled = false
 
@@ -442,13 +469,14 @@ _sections_unfolded = [ "Transform", "material" ]
 
 root_node = NodePath("..")
 autoplay = ""
-playback_process_mode = 1
+playback_process_mode = 0
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/close = SubResource( 6 )
 anims/open = SubResource( 7 )
 blend_times = [  ]
 autoplay = ""
+_sections_unfolded = [ "Playback Options" ]
 
 [node name="Camera" type="Camera" parent="." index="9"]
 
@@ -476,5 +504,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="tree_entered" from="roof" to="roof" method="show"]
+
+[connection signal="body_entered" from="end_area" to="." method="end_area_entered"]
+
+[connection signal="body_exited" from="end_area" to="." method="end_area_exited"]
 
 
