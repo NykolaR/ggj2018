@@ -220,7 +220,7 @@ tracks/2/keys = {
 } ]
 }
 
-[node name="level_end" type="Spatial" index="0"]
+[node name="level_end" type="Spatial"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0 )
 script = ExtResource( 1 )
