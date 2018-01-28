@@ -249,6 +249,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="end_area" type="Area" parent="." index="4"]
 
+editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -280,6 +281,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="close_door" type="Area" parent="." index="5"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9533, 0, 0 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -327,13 +329,12 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="lights" type="Spatial" parent="." index="7"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109006, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="player_1" type="MeshInstance" parent="lights" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 10.7 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -350,7 +351,7 @@ _sections_unfolded = [ "Transform", "material" ]
 
 [node name="player_2" type="MeshInstance" parent="lights" index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, -10.7 )
 layers = 1
 material_override = null
 cast_shadow = 1
