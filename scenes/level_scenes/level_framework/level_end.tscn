@@ -222,7 +222,7 @@ tracks/2/keys = {
 
 [node name="level_end" type="Spatial" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8584, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 next_level = ""
@@ -329,6 +329,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="lights" type="Spatial" parent="." index="7"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109006, 0 )
 _sections_unfolded = [ "Transform" ]
 
