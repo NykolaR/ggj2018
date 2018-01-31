@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Interdimensional Hopscotch"
-run/main_scene="res://scenes/management/lobby.tscn"
+run/main_scene="res://scenes/management/lobby_alt.tscn"
 config/icon="res://assets/texture/icon.png"
 
 [display]

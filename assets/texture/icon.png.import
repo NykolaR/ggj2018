@@ -11,7 +11,7 @@ source_file="res://assets/texture/icon.png"
 source_md5="ae7e641067601e2184afcade49abd283"
 
 dest_files=[ "res://.import/icon.png-d89bd52877d21bc923b9e678012f4b75.s3tc.stex", "res://.import/icon.png-d89bd52877d21bc923b9e678012f4b75.etc2.stex" ]
-dest_md5="e5f68a13b29daf9ec0597ea9ae52706b"
+dest_md5="7b7be2aee04e7f807632da567dc31e1d"
 
 [params]
 
@@ -23,7 +23,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

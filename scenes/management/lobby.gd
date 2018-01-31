@@ -2,6 +2,11 @@ extends Node
 
 const DEFAULT_PORT = 10309 # uh sure
 
+onready var status_ok = $lobby/menu_panel/container/bottom/h/status_ok
+onready var status_fail = $lobby/menu_panel/container/bottom/h/status_fail
+onready var join_button = $lobby/menu_panel/container/buttons/join
+onready var host_button = $lobby/menu_panel/container/buttons/host
+
 func _ready():
 	# connect all the callbacks related to networking
 	get_tree().connect("network_peer_connected",self,"_player_connected")
@@ -12,19 +17,27 @@ func _ready():
 
 func _set_status(text, is_ok): # set status labels
 	if (is_ok):
-		$lobby/panel/status_ok.set_text(text)
-		$lobby/panel/status_fail.set_text("")
+		status_ok.set_text(text)
+		status_fail.set_text("")
 	else:
-		$lobby/panel/status_ok.set_text("")
-		$lobby/panel/status_fail.set_text(text)
+		status_ok.set_text("")
+		status_fail.set_text(text)
 
 func _player_connected(id): # player connected, begin the game!
 	var game = load("res://scenes/management/game.tscn").instance()
+	$lobby_cam.current = false
 	game.connect("game_finished",self,"_end_game",[],CONNECT_DEFERRED) # connect deferred so we can safely erase it from the callback
 	
 	#get_tree().get_root().add_child(game)
 	$game_holder.add_child(game)
 	$lobby.hide() # hide lobby screen
+	
+	if is_network_master():
+		print("mast")
+		#game.player_set(1, $lobby/menu_panel/container/bottom/color/color.modulate)
+		game.rpc("player_set", 1, $lobby/menu_panel/container/bottom/color/color.modulate)
+	else:
+		game.rpc("player_set", 2, $lobby/menu_panel/container/bottom/color/color.modulate)
 
 func _player_disconnected(id):
 	if (get_tree().is_network_server()):
@@ -40,8 +53,9 @@ func _connected_fail(): # callback from scenetree for clients
 	
 	get_tree().set_network_peer(null) #remove peer
 	
-	$lobby/panel/join.set_disabled(false)
-	$lobby/panel/host.set_disabled(false)
+	$lobby_cam.current = true
+	join_button.set_disabled(false)
+	host_button.set_disabled(false)
 
 func _server_disconnected():
 	_end_game("Server disconnected")
@@ -56,8 +70,9 @@ func _end_game(with_error=""):
 	
 	get_tree().set_network_peer(null) #remove peer
 	
-	$lobby/panel/join.set_disabled(false)
-	$lobby/panel/host.set_disabled(false)
+	$lobby_cam.current = true
+	join_button.set_disabled(false)
+	host_button.set_disabled(false)
 	
 	_set_status(with_error,false)
 	
@@ -71,13 +86,13 @@ func _on_host_pressed():
 		#is another server running?
 		_set_status("Can't host, address in use.",false)
 		return
-		
+	
 	get_tree().set_network_peer(peer)
-	$lobby/panel/host.set_disabled(true)
+	host_button.set_disabled(true)
 	_set_status("Waiting for player...",true)
 
 func _on_join_pressed():
-	var ip = $lobby/panel/address.get_text()
+	var ip = $lobby/menu_panel/container/address_bar/address.get_text()
 	if (not ip.is_valid_ip_address()):
 		_set_status("IP address is invalid",false)
 		return

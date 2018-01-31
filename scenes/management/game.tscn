@@ -92,7 +92,6 @@ cull_mask = 1048567
 
 [node name="orb" parent="player1" index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3 )
 collision_layer = 0
 collision_mask = 17

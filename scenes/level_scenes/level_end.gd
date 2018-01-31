@@ -50,7 +50,7 @@ func set_level(material, level):
 		material.emission_energy = LIT_ENERGY
 
 func _ready():
-	if is_network_master():
+	if (not get_tree().network_peer == null) and is_network_master():
 		rpc("set_level", $lights/player_1.get_surface_material(0), DIM)
 		rpc("set_level", $lights/player_2.get_surface_material(0), DIM)
 

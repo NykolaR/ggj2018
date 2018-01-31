@@ -25,6 +25,17 @@ func _input(event):
 	if event.is_action_pressed("exit_game"):
 		emit_signal("game_finished")
 
+sync func player_set(p, color):
+	print("set")
+	var orby
+	if p == 1:
+		orby = $player1/orb/mesh
+	if p == 2:
+		orby = $player2/orb/mesh
+	
+	orby.get_surface_material(0).emission = color
+	print(color)
+
 #sync func spawn_level(level_path, transl):
 #	# spawn level
 #	var level = load(level_path).instance()

@@ -67,13 +67,13 @@ proximity_fade_enable = false
 distance_fade_enable = true
 distance_fade_min_distance = 0.0
 distance_fade_max_distance = 1.0
-_sections_unfolded = [ "Distance Fade", "Proximity Fade" ]
+_sections_unfolded = [ "Distance Fade", "Emission", "Proximity Fade" ]
 
 [sub_resource type="SphereShape" id=3]
 
 radius = 0.2
 
-[node name="orb" type="RigidBody"]
+[node name="orb" type="RigidBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -82,7 +82,7 @@ collision_mask = 33
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.0
+bounce = 0.1
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
