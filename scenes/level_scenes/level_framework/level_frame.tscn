@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/level_scenes/level_framework/level_frame.gd" type="Script" id=1]
+[ext_resource path="res://scenes/level_scenes/level_framework/level_start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/platforms/platform_global.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/platforms/platform_global.gd" type="Script" id=4]
+[ext_resource path="res://scenes/level_scenes/level_framework/level_end.tscn" type="PackedScene" id=5]
+
+[node name="level_frame" type="Spatial" index="0"]
+
+script = ExtResource( 1 )
+level_length = 15
+
+[node name="level_start" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="level_middle" type="Spatial" parent="." index="1"]
+
+transform = Transform( 15, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="floor" parent="level_middle" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, -6, 0 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="roof" parent="level_middle" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 16, 0 )
+visible = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="wall_r" parent="level_middle" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, 11 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="wall_l" parent="level_middle" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -11 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="level_end" parent="." index="2" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0 )
+
+[connection signal="tree_entered" from="level_middle/roof" to="level_middle/roof" method="hide_roof"]
+
+
